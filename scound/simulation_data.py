@@ -91,7 +91,7 @@ class SignalGenerator:
         return coeff * np.maximum(0, self.t - start_time)**2
     
 
-TIME_SIMULATION = 60
+TIME_SIMULATION = 6000
 VOLT_SUPPLY = 24
 DT = 0.01
 FOLDER = r"D:\Project_end\prediction_model\scound"
@@ -112,8 +112,8 @@ for idx, signal in enumerate(DATA_INPUT):
     TIME.append(idx)
 
 logger.add_data_log(
-        columns_name=["TIME","SIGNAL", "DATA_INPUT", "DATA_OUTPUT"],
-        data_list=[TIME,DATA_INPUT,ACTION, DATA_OUTPUT])
+        columns_name=["DATA_INPUT", "DATA_OUTPUT"],
+        data_list=[ACTION, DATA_OUTPUT])
 logger.save_to_csv(file_name="data_log_simulation",folder_name=FOLDER)
 
 
